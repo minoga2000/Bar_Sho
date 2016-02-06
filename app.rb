@@ -4,7 +4,10 @@ require 'sinatra/reloader'
 require 'sqlite3'
 
 def get_db
-    return SQLite3::Database.new ("barbershop.db")
+    db =  SQLite3::Database.new ("barbershop.db")
+    db. results_as_hash = true
+    return db
+
 end
 
 configure do
@@ -33,6 +36,10 @@ end
 
 get '/visit' do
 	erb :visit
+end
+
+get '/showusers' do
+	erb "Hello world"
 end
 
 post '/visit' do
