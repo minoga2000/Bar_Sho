@@ -39,7 +39,7 @@ get '/visit' do
 end
 
 get '/showusers' do
-	erb "Hello world"
+	erb :showusers
 end
 
 post '/visit' do
